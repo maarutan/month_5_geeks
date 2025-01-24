@@ -3,6 +3,9 @@
 db.sqlite3
 venv
 .idea
+pyrightconfig.json
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
