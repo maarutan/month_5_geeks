@@ -10,7 +10,19 @@ class DirectorSerializer(serializers.ModelSerializer):
         ]
 
 
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = [
+            "text",
+            "movie",
+        ]
+
+
 class MovieSerializer(serializers.ModelSerializer):
+    director = DirectorSerializer()
+    reviews = ReviewSerializer(many=True)
+
     class Meta:
         model = Movie
         fields = [
@@ -18,13 +30,5 @@ class MovieSerializer(serializers.ModelSerializer):
             "description",
             "duration",
             "director",
-        ]
-
-
-class ReviewSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Review
-        fields = [
-            "text",
-            "movie",
+            "reviews",
         ]

@@ -9,12 +9,12 @@ urlpatterns = [
         views.DirectroDetailAPIView.as_view(),
         name="director-detail",
     ),
-    path("movie/", views.MovieDetailAPIView.as_view(), name="movie-list"),
+    path("movie/", views.MovieListAPIView.as_view(), name="movie-list"),
     path("movie/<int:pk>", views.MovieDetailAPIView.as_view(), name="movie-detail"),
-    path("rewiew/", views.RewiewDetailAPIView.as_view(), name="rewiew-list"),
+    path("review/", views.ReviewListAPIView.as_view(), name="review-list"),
     path(
-        "rewiew/<int:pk>",
-        views.RewiewDetailAPIView.as_view(),
-        name="rewiew-detail",
+        "review/<int:pk>",
+        views.ReviewDetailAPIView.as_view(),
+        name="review-detail",
     ),
 ]

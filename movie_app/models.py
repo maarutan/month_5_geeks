@@ -25,7 +25,7 @@ class Movie(models.Model):
     def __str__(self):  # pyright: ignore
         return self.title
 
-    class Meta:  # pyright: ignore
+    class Meta:
         verbose_name = "Movie"
         verbose_name_plural = "Movies"
 
@@ -39,8 +39,8 @@ class Review(models.Model):
     )
 
     def __str__(self):  # pyright: ignore
-        return self.movie.title  # pyright: ignore
+        return f"Review of {self.movie.title}" if self.movie else "No movie assigned"
 
     class Meta:
-        verbose_name = "Rewiew"
-        verbose_name_plural = "Rewiews"
+        verbose_name = "Review"
+        verbose_name_plural = "Reviews"

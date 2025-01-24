@@ -5,7 +5,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = []
@@ -60,7 +59,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name="Rewiew",
+            name="Review",
             fields=[
                 (
                     "id",
@@ -76,14 +75,14 @@ class Migration(migrations.Migration):
                     "movie",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        related_name="rewiews",
+                        related_name="reviews",
                         to="movie_app.movie",
                     ),
                 ),
             ],
             options={
-                "verbose_name": "Rewiew",
-                "verbose_name_plural": "Rewiews",
+                "verbose_name": "Review",
+                "verbose_name_plural": "Reviews",
             },
         ),
     ]

@@ -1,39 +1,39 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from rest_framework import generics
 from .models import Director, Movie, Review
 from .serializers import MovieSerializer, ReviewSerializer, DirectorSerializer
 
 
-class DirectorListAPIView(generics.ListAPIView):
+class DirectorListAPIView(generics.ListCreateAPIView):
     queryset = Director.objects.all()
     serializer_class = DirectorSerializer
-    loockup_field = "id"
+    lookup_field = "id"
 
 
 class DirectroDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Director.objects.all()
     serializer_class = DirectorSerializer
-    loockup_field = "id"
+    lookup_field = "id"
 
 
-class MovieDetailAPIView(generics.ListCreateAPIView):
+class MovieListAPIView(generics.ListCreateAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-    loockup_field = "id"
+    lookup_field = "id"
 
 
 class MovieDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
-    loockup_field = "id"
+    lookup_field = "id"
 
 
-class RewiewListAPIView(generics.ListCreateAPIView):
+class ReviewListAPIView(generics.ListCreateAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 
 
-class RewiewDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
+class ReviewDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
-    loockup_field = "id"
+    lookup_field = "id"
