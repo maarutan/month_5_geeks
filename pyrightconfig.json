@@ -1,0 +1,6 @@
+{
+  "venvPath": "./",
+  "venv": ".venv",
+  "pythonPath": "./.venv/bin/python",
+  "exclude": ["**/node_modules", "**/__pycache__"]
+}
